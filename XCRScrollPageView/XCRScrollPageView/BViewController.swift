@@ -10,11 +10,13 @@ import UIKit
 
 class BViewController: UIViewController {
 
+    var vcCanScroll : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64), style: .plain)
-
+        tableView.scrollsToTop = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell_ID")
@@ -58,3 +60,14 @@ extension BViewController : UITableViewDataSource ,UITableViewDelegate {
     }
     
 }
+
+extension BViewController : UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !self.vcCanScroll {
+            scrollView.contentOffset = CGPoint.zero
+        }
+        scrollView.showsVerticalScrollIndicator = self.vcCanScroll
+    }
+}
+

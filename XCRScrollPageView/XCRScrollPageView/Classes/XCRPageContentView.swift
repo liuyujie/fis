@@ -79,7 +79,8 @@ class XCRPageContentView: UIView {
     /// 用来记录开始滚动的offSetX
     fileprivate var beginOffSetX:CGFloat = 0.0
     private var oldIndex = 0
-    fileprivate var currentIndex = 1
+    
+    var currentIndex = 1
     
     public weak var delegate: XCRPageContentViewDelegate?
 

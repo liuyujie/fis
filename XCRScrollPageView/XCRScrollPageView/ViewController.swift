@@ -9,7 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var vcCanScroll : Bool = false {
+        didSet {
+            if let vc = scrollPageView.childVCArray[scrollPageView.selectIndex] as? BViewController {
+                vc.vcCanScroll = vcCanScroll
+            }
+        }
+    }
     var tableView: UITableView!
     
     var scrollPageView: XCRScrollPageView!
@@ -51,12 +58,11 @@ extension ViewController : UITableViewDataSource ,UITableViewDelegate {
             var cell = tableView.dequeueReusableCell(withIdentifier: "CELL_Page_View")
             if cell == nil {
                 cell = UITableViewCell(style: .default, reuseIdentifier: "CELL_Page_View")
-
                 let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64)
                 scrollPageView = XCRScrollPageView(frame: frame, titleStyle: XCRPageTitleStyle(), titles: ["abc","dbcc"], childVCs: [BViewController(),BViewController()], parentViewController: self);
                 cell?.contentView.addSubview(scrollPageView)
             }
-             return cell!
+            return cell!
         }
     }
     
@@ -75,12 +81,19 @@ extension ViewController : UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let y = scrollView.contentOffset.y
+        if y < 0 {
+            self.tableView.contentOffset = CGPoint.zero
+            self.vcCanScroll = true
+        }
+        
         if y < 230 {
-            
+            self.vcCanScroll = false
         } else {
             self.tableView.contentOffset = CGPoint(x: 0, y: 230)
+            self.vcCanScroll = true
         }
+        
+        scrollView.showsVerticalScrollIndicator = false
     }
-    
 }
 

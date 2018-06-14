@@ -56,7 +56,6 @@ extension ViewController : UITableViewDataSource ,UITableViewDelegate {
                 scrollPageView = XCRScrollPageView(frame: frame, titleStyle: XCRPageTitleStyle(), titles: ["abc","dbcc"], childVCs: [BViewController(),BViewController()], parentViewController: self);
                 cell?.contentView.addSubview(scrollPageView)
             }
-            
              return cell!
         }
     }

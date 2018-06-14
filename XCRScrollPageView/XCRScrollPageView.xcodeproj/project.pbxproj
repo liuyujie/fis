@@ -19,6 +19,7 @@
 		27AF7B6320D25F5A00773662 /* XCRPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7B6220D25F5A00773662 /* XCRPageTitleView.swift */; };
 		27AF7B6520D25F8000773662 /* XCRPageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7B6420D25F8000773662 /* XCRPageContentView.swift */; };
 		27AF7B6720D2791200773662 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7B6620D2791200773662 /* BViewController.swift */; };
+		27C496CA20D2B733000BFE12 /* XCRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C496C920D2B733000BFE12 /* XCRTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		27AF7B6220D25F5A00773662 /* XCRPageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRPageTitleView.swift; sourceTree = "<group>"; };
 		27AF7B6420D25F8000773662 /* XCRPageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRPageContentView.swift; sourceTree = "<group>"; };
 		27AF7B6620D2791200773662 /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
+		27C496C920D2B733000BFE12 /* XCRTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				27AF7B6420D25F8000773662 /* XCRPageContentView.swift */,
 				27AF7B6020D2569200773662 /* XCRPageTitleStyle.swift */,
 				27AF7B6220D25F5A00773662 /* XCRPageTitleView.swift */,
+				27C496C920D2B733000BFE12 /* XCRTableView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				27AF7B6320D25F5A00773662 /* XCRPageTitleView.swift in Sources */,
 				27AF7B5F20D2561A00773662 /* XCRScrollPageView.swift in Sources */,
 				27AF7B3020D2521800773662 /* AppDelegate.swift in Sources */,
+				27C496CA20D2B733000BFE12 /* XCRTableView.swift in Sources */,
 				27AF7B6120D2569200773662 /* XCRPageTitleStyle.swift in Sources */,
 				27AF7B6520D25F8000773662 /* XCRPageContentView.swift in Sources */,
 			);

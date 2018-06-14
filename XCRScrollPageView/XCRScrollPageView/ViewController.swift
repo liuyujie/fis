@@ -16,11 +16,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let frame = CGRect(x: 0, y: 64, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64)
-        scrollPageView = XCRScrollPageView(frame: frame, titleStyle: XCRPageTitleStyle(), titles: ["abc","dbcc"], childVCs: [BViewController(),BViewController()], parentViewController: self);
- 
-        tableView = UITableView(frame: frame, style: .plain)
+        tableView = XCRTableView(frame: frame, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
@@ -54,10 +51,8 @@ extension ViewController : UITableViewDataSource ,UITableViewDelegate {
             var cell = tableView.dequeueReusableCell(withIdentifier: "CELL_Page_View")
             if cell == nil {
                 cell = UITableViewCell(style: .default, reuseIdentifier: "CELL_Page_View")
-                
                 let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64)
                 scrollPageView = XCRScrollPageView(frame: frame, titleStyle: XCRPageTitleStyle(), titles: ["abc","dbcc"], childVCs: [BViewController(),BViewController()], parentViewController: self);
-
                 cell?.contentView.addSubview(scrollPageView)
             }
             

@@ -31,7 +31,6 @@ class ViewController: UIViewController {
     }
 }
 
-
 extension ViewController : UITableViewDataSource ,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,7 +53,10 @@ extension ViewController : UITableViewDataSource ,UITableViewDelegate {
             if cell == nil {
                 cell = UITableViewCell(style: .default, reuseIdentifier: "CELL_Page_View")
                 let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64)
-                scrollPageView = XCRScrollPageView(frame: frame, titleStyle: XCRPageTitleStyle(), titles: ["abc","dbcc"], childVCs: [BViewController(),BViewController()], parentViewController: self);
+                let titleArray = ["abc","dbcc","db2cc","dbc3c","dbc2c","dbc2"]
+                let childVCArray = [BViewController(),BViewController(),BViewController(),BViewController(),BViewController(),BViewController()]
+                
+                scrollPageView = XCRScrollPageView(frame: frame, titleStyle: XCRPageTitleStyle(), titles: titleArray, childVCs:childVCArray , parentViewController: self);
                 cell?.contentView.addSubview(scrollPageView)
             }
             return cell!
@@ -79,6 +81,7 @@ extension ViewController : UIScrollViewDelegate {
         let y = scrollView.contentOffset.y
         
         let vc = self.scrollPageView.childVCArray[self.scrollPageView.selectIndex] as! BViewController
+        
         vc.vcCanRefsh = false
         
         if y >= 230 {
@@ -88,7 +91,6 @@ extension ViewController : UIScrollViewDelegate {
                 vc.vcCanScroll = true;
             }
         } else {
-         
             if y < 0 {
                 self.tableView.contentOffset = CGPoint.zero
                 self.viewCanScroll = false
@@ -100,37 +102,13 @@ extension ViewController : UIScrollViewDelegate {
                     self.tableView.contentOffset = CGPoint(x: 0, y: 230)
                 }
             }
-          
         }
+        
         if !vc.vcCanScroll && !self.viewCanScroll {
             self.viewCanScroll = true
         }
-//        if y < 0 {
-////            self.tableView.contentOffset = CGPoint.zero
-////            self.viewCanScroll = false
-////            vc.vcCanRefsh = true
-//        }else if y == 0 {
-//            
-//        } else {
-//            if !vc.vcCanScroll {
-//                if y >= 230 {
-//                    self.tableView.contentOffset = CGPoint(x: 0, y: 230)
-//                    self.viewCanScroll = false
-//                    vc.vcCanScroll = true
-//                } else {
-//                    vc.vcCanScroll = false
-//                }
-//            } else {
-//                self.viewCanScroll = false
-//            }
-//            
-//            if !vc.vcCanScroll && !self.viewCanScroll {
-//                 self.viewCanScroll = true
-//            }
-//
-//        }
-
         scrollView.showsVerticalScrollIndicator = false
     }
+    
 }
 

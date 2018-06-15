@@ -17,7 +17,7 @@ public class XCRScrollPageView: UIView {
     var childVCArray: [UIViewController] = []
     var titleArray: [String] = []
     var selectIndex : Int {
-        return pageContentView.currentIndex - 1
+        return pageContentView.currentIndex
     }
     
     public init(frame:CGRect, titleStyle: XCRPageTitleStyle, titles: [String], childVCs:[UIViewController], parentViewController: UIViewController) {

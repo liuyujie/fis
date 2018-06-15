@@ -9,14 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+        
+    var viewCanScroll : Bool = true
     
-    var vcCanScroll : Bool = false {
-        didSet {
-            if let vc = scrollPageView.childVCArray[scrollPageView.selectIndex] as? BViewController {
-                vc.vcCanScroll = vcCanScroll
-            }
-        }
-    }
     var tableView: UITableView!
     
     var scrollPageView: XCRScrollPageView!
@@ -80,19 +75,50 @@ extension ViewController : UITableViewDataSource ,UITableViewDelegate {
 extension ViewController : UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
         let y = scrollView.contentOffset.y
-        if y < 0 {
-            self.tableView.contentOffset = CGPoint.zero
-            self.vcCanScroll = true
-        }
         
-        if y < 230 {
-            self.vcCanScroll = false
-        } else {
+        let vc = self.scrollPageView.childVCArray[self.scrollPageView.selectIndex] as! BViewController
+        
+        if y >= 230 {
             self.tableView.contentOffset = CGPoint(x: 0, y: 230)
-            self.vcCanScroll = true
+            if (self.viewCanScroll) {
+                self.viewCanScroll = false;
+                vc.vcCanScroll = true;
+            }
+        } else {
+            if !self.viewCanScroll {//子视图没到顶部
+                self.tableView.contentOffset = CGPoint(x: 0, y: 230)
+            }
         }
-        
+        if !vc.vcCanScroll && !self.viewCanScroll {
+            self.viewCanScroll = true
+        }
+//        if y < 0 {
+////            self.tableView.contentOffset = CGPoint.zero
+////            self.viewCanScroll = false
+////            vc.vcCanRefsh = true
+//        }else if y == 0 {
+//            
+//        } else {
+//            if !vc.vcCanScroll {
+//                if y >= 230 {
+//                    self.tableView.contentOffset = CGPoint(x: 0, y: 230)
+//                    self.viewCanScroll = false
+//                    vc.vcCanScroll = true
+//                } else {
+//                    vc.vcCanScroll = false
+//                }
+//            } else {
+//                self.viewCanScroll = false
+//            }
+//            
+//            if !vc.vcCanScroll && !self.viewCanScroll {
+//                 self.viewCanScroll = true
+//            }
+//
+//        }
+
         scrollView.showsVerticalScrollIndicator = false
     }
 }

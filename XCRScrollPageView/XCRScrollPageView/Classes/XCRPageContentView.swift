@@ -80,7 +80,7 @@ class XCRPageContentView: UIView {
     fileprivate var beginOffSetX:CGFloat = 0.0
     private var oldIndex = 0
     
-    var currentIndex = 1
+    var currentIndex = 0
     
     public weak var delegate: XCRPageContentViewDelegate?
 

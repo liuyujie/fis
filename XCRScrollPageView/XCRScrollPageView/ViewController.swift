@@ -79,6 +79,7 @@ extension ViewController : UIScrollViewDelegate {
         let y = scrollView.contentOffset.y
         
         let vc = self.scrollPageView.childVCArray[self.scrollPageView.selectIndex] as! BViewController
+        vc.vcCanRefsh = false
         
         if y >= 230 {
             self.tableView.contentOffset = CGPoint(x: 0, y: 230)
@@ -87,9 +88,19 @@ extension ViewController : UIScrollViewDelegate {
                 vc.vcCanScroll = true;
             }
         } else {
-            if !self.viewCanScroll {//子视图没到顶部
-                self.tableView.contentOffset = CGPoint(x: 0, y: 230)
+         
+            if y < 0 {
+                self.tableView.contentOffset = CGPoint.zero
+                self.viewCanScroll = false
+                vc.vcCanRefsh = true
+            } else if y == 0 {
+                
+            } else {
+                if !self.viewCanScroll {//子视图没到顶部
+                    self.tableView.contentOffset = CGPoint(x: 0, y: 230)
+                }
             }
+          
         }
         if !vc.vcCanScroll && !self.viewCanScroll {
             self.viewCanScroll = true

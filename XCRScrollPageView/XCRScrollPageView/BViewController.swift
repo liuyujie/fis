@@ -65,8 +65,13 @@ extension BViewController : UITableViewDataSource ,UITableViewDelegate {
 extension BViewController : UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
         let y = scrollView.contentOffset.y
         
+        if y < 0 && self.vcCanRefsh {
+            return
+        }
+    
         if !self.vcCanScroll {
             scrollView.contentOffset = CGPoint.zero
         }
@@ -75,8 +80,7 @@ extension BViewController : UIScrollViewDelegate {
             self.vcCanScroll = false
             scrollView.contentOffset = CGPoint.zero
         }
-        
-      
+    
         scrollView.showsVerticalScrollIndicator = self.vcCanScroll
     }
 }

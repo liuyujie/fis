@@ -11,7 +11,6 @@ import UIKit
 class BViewController: UIViewController {
 
     var vcCanScroll : Bool = false
-    var vcCanRefsh : Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,24 +63,20 @@ extension BViewController : UITableViewDataSource ,UITableViewDelegate {
 
 extension BViewController : UIScrollViewDelegate {
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        
-//        let y = scrollView.contentOffset.y
-//        
-//        if y < 0 && self.vcCanRefsh {
-//            return
-//        }
-//    
-//        if !self.vcCanScroll {
-//            scrollView.contentOffset = CGPoint.zero
-//        }
-//        
-//        if y <= 0 {
-//            self.vcCanScroll = false
-//            scrollView.contentOffset = CGPoint.zero
-//        }
-//    
-//        scrollView.showsVerticalScrollIndicator = self.vcCanScroll
-//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let y = scrollView.contentOffset.y
+        
+        if !self.vcCanScroll {
+            scrollView.contentOffset = CGPoint.zero
+        }
+        
+        if y <= 0 {
+            self.vcCanScroll = false
+            scrollView.contentOffset = CGPoint.zero
+        }
+    
+        scrollView.showsVerticalScrollIndicator = self.vcCanScroll
+    }
 }
 

@@ -63,6 +63,7 @@ extension ViewController : UITableViewDataSource ,UITableViewDelegate {
                 style.normalColor = UIColor.cB5B8BB
                 style.hideSeparateLine = false
                 scrollPageView = XCRScrollPageView(frame: frame, titleStyle:style, titles: titleArray, childVCs:childVCArray , parentViewController: self);
+                scrollPageView.pageDelegate = self
                 cell?.contentView.addSubview(scrollPageView)
             }
             return cell!
@@ -87,8 +88,7 @@ extension ViewController : UIScrollViewDelegate {
         let y = scrollView.contentOffset.y
         
         let vc = self.scrollPageView.childVCArray[self.scrollPageView.selectIndex] as! BViewController
-        
-        vc.vcCanRefsh = false
+
         
         if y >= 230 {
             self.tableView.contentOffset = CGPoint(x: 0, y: 230)
@@ -97,16 +97,8 @@ extension ViewController : UIScrollViewDelegate {
                 vc.vcCanScroll = true;
             }
         } else {
-            if y < 0 {
-                self.tableView.contentOffset = CGPoint.zero
-                self.viewCanScroll = false
-                vc.vcCanRefsh = true
-            } else if y == 0 {
-                
-            } else {
-                if !self.viewCanScroll {//子视图没到顶部
-                    self.tableView.contentOffset = CGPoint(x: 0, y: 230)
-                }
+            if !self.viewCanScroll {//子视图没到顶部
+                self.tableView.contentOffset = CGPoint(x: 0, y: 230)
             }
         }
         
@@ -121,3 +113,15 @@ extension ViewController : UIScrollViewDelegate {
     
 }
 
+extension ViewController : XCRScrollPageViewDelegate {
+    
+
+    func scrollPageViewWillBeginDragging(_ scrollView: UIScrollView){
+        tableView.isScrollEnabled = false
+    }
+    
+    func scrollPageViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool){
+         tableView.isScrollEnabled = true
+    }
+    
+}

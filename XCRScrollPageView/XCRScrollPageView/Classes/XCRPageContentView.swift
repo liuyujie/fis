@@ -10,56 +10,10 @@ import UIKit
 import XCRTitleScrollView
 
 
-public protocol XCRPageContentViewDelegate: class {
-    /// 有默认实现, 不推荐重写(override is not recommoned)
-    func contentViewMoveToIndex(fromIndex: Int, toIndex: Int, progress: CGFloat)
-    /// 有默认实现, 不推荐重写(override is not recommoned)
-    func contentViewDidEndMoveToIndex(fromIndex: Int , toIndex: Int)
+public protocol XCRPageContentViewDelegate: UIScrollViewDelegate {
     
-    func contentViewShouldBeginPanGesture(panGesture: UIPanGestureRecognizer , collectionView: UICollectionView) -> Bool;
-    
-    func contentViewDidBeginMove(scrollView: UIScrollView)
-    
-    func contentViewIsScrolling(scrollView: UIScrollView)
-    func contentViewDidEndDisPlay(scrollView: UIScrollView)
-    
-    func contentViewDidEndDrag(scrollView: UIScrollView)
     /// 必须提供的属性
     var titleContentView: XCRTitleScrollView { get }
-}
-
-// 由于每个遵守这个协议的都需要执行些相同的操作, 所以直接使用协议扩展统一完成,协议遵守者只需要提供segmentView即可
-extension XCRPageContentViewDelegate {
-
-    public func contentViewDidEndDrag(scrollView: UIScrollView) {
-        
-    }
-
-    public func contentViewDidEndDisPlay(scrollView: UIScrollView) {
-        
-    }
-
-    public func contentViewIsScrolling(scrollView: UIScrollView) {
-         titleContentView.scrollTitleButton(scrollView.contentOffset.x)
-    }
-    // 默认什么都不做
-    public func contentViewDidBeginMove(scrollView: UIScrollView) {
-        
-    }
-
-    public func contentViewShouldBeginPanGesture(panGesture: UIPanGestureRecognizer , collectionView: UICollectionView) -> Bool {
-        return true
-    }
-    
-    // 内容每次滚动完成时调用, 确定title和其他的控件的位置
-    public func contentViewDidEndMoveToIndex(fromIndex: Int , toIndex: Int) {
-//        titleContentView.scrollTitleButton(CGFloat(toIndex) * UIScreen.main.bounds.width)
-    }
-    
-    // 内容正在滚动的时候,同步滚动滑块的控件
-    public func contentViewMoveToIndex(fromIndex: Int, toIndex: Int, progress: CGFloat) {
-        titleContentView.scrollTitleButton(progress)
-    }
 }
 
 
@@ -188,50 +142,42 @@ extension XCRPageContentView : UICollectionViewDataSource , UICollectionViewDele
 // MARK: - UIScrollViewDelegate
 extension XCRPageContentView: UIScrollViewDelegate {
     
-    // update UI
-    final public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let currentIndex = Int(floor(scrollView.contentOffset.x + 1 / bounds.size.width))
-        
-        delegate?.contentViewDidEndDisPlay(scrollView: collectionView)
-        delegate?.contentViewDidEndMoveToIndex(fromIndex: self.currentIndex, toIndex: currentIndex)
-        
-    }
-    
-    // 代码调整contentOffSet但是没有动画的时候不会调用这个
-    final public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-//        delegate?.contentViewDidEndDisPlay(scrollView: collectionView)
-        
-    }
-    
-    final public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let currentIndex = Int(floor(scrollView.contentOffset.x / bounds.size.width))
-        if let naviParentViewController = self.parentViewController?.parent as? UINavigationController {
-            naviParentViewController.interactivePopGestureRecognizer?.isEnabled = true
-        }
-        delegate?.contentViewDidEndDrag(scrollView: scrollView)
-//        print(scrollView.contentOffset.x)
-        //快速滚动的时候第一页和最后一页(scroll too fast will not call 'scrollViewDidEndDecelerating')
-        if scrollView.contentOffset.x == 0 || scrollView.contentOffset.x == scrollView.contentSize.width - scrollView.bounds.width {
-            if self.currentIndex != currentIndex {
-                delegate?.contentViewDidEndMoveToIndex(fromIndex: self.currentIndex, toIndex: currentIndex)
-            }
-        }
-    }
-    
-    // 手指开始拖的时候, 记录此时的offSetX, 并且表示不是点击title切换的内容(remenber the begin offsetX)
-    final public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        /// 用来判断方向
-        self.beginOffSetX = scrollView.contentOffset.x
-        delegate?.contentViewDidBeginMove(scrollView: collectionView)
-        self.forbidTouchToAdjustPosition = false
-    }
-
-    // 需要实时更新滚动的进度和移动的方向及下标 以便于外部使用 (compute the index and progress)
     final public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offSetX = scrollView.contentOffset.x
         self.currentIndex = Int(floor(offSetX / bounds.size.width))
-        delegate?.contentViewIsScrolling(scrollView: scrollView)
-
+        delegate?.scrollViewDidScroll?(scrollView)
     }
+
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        delegate?.scrollViewWillBeginDragging?(scrollView)
+    }
+    
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        delegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
+    }
+    
+//    final public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        let currentIndex = Int(floor(scrollView.contentOffset.x / bounds.size.width))
+//        if let naviParentViewController = self.parentViewController?.parent as? UINavigationController {
+//            naviParentViewController.interactivePopGestureRecognizer?.isEnabled = true
+//        }
+//        delegate?.contentViewDidEndDrag(scrollView: scrollView)
+////        print(scrollView.contentOffset.x)
+//        //快速滚动的时候第一页和最后一页(scroll too fast will not call 'scrollViewDidEndDecelerating')
+//        if scrollView.contentOffset.x == 0 || scrollView.contentOffset.x == scrollView.contentSize.width - scrollView.bounds.width {
+//            if self.currentIndex != currentIndex {
+//                delegate?.contentViewDidEndMoveToIndex(fromIndex: self.currentIndex, toIndex: currentIndex)
+//            }
+//        }
+//    }
+//
+//    // 手指开始拖的时候, 记录此时的offSetX, 并且表示不是点击title切换的内容(remenber the begin offsetX)
+//    final public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        /// 用来判断方向
+//        self.beginOffSetX = scrollView.contentOffset.x
+//        self.forbidTouchToAdjustPosition = false
+//    }
+
+
 
 }

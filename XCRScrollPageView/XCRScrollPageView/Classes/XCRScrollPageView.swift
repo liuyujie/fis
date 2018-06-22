@@ -9,10 +9,19 @@
 import UIKit
 import XCRTitleScrollView
 
+public protocol XCRScrollPageViewDelegate : NSObjectProtocol {
+
+    func scrollPageViewWillBeginDragging(_ scrollView: UIScrollView)
+    
+    func scrollPageViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
+}
+
 public class XCRScrollPageView: UIView {
     
     private var titleStyle : XCRTitleScrollViewStyle!
     public var parentViewController : UIViewController?
+    public weak var pageDelegate : XCRScrollPageViewDelegate?
+
     private var titleView: XCRTitleScrollView!
     private(set) var pageContentView: XCRPageContentView!
     var childVCArray: [UIViewController] = []
@@ -39,8 +48,6 @@ public class XCRScrollPageView: UIView {
         
         backgroundColor = UIColor.white
         
-  
-        
         titleView = XCRTitleScrollView(style: titleStyle)
         titleView.alwaysBounceHorizontal = true
         titleView.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: 44)
@@ -59,17 +66,25 @@ public class XCRScrollPageView: UIView {
         titleView.handleSelectButton = { [unowned self](selectedIndex, _) in
             self.pageContentView.scrollTo(selectedIndex,animated: false)
         }
-
     }
-    
-    
 }
 
 extension XCRScrollPageView: XCRPageContentViewDelegate {
+    
     public var titleContentView: XCRTitleScrollView {
         return self.titleView
     }
-
     
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        titleContentView.scrollTitleButton(scrollView.contentOffset.x)
+    }
+    
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.pageDelegate?.scrollPageViewWillBeginDragging(scrollView)
+    }
+    
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.pageDelegate?.scrollPageViewDidEndDragging(scrollView, willDecelerate: decelerate)
+    }
 }
 

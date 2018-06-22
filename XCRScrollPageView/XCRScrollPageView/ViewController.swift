@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import XCRTitleScrollView
 
 class ViewController: UIViewController {
         
@@ -56,8 +57,12 @@ extension ViewController : UITableViewDataSource ,UITableViewDelegate {
                 let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64)
                 let titleArray = ["abc","dbcc","db2cc","dbc3c","dbc2c","dbc2"]
                 let childVCArray = [BViewController(),BViewController(),BViewController(),BViewController(),BViewController(),BViewController()]
-                
-                scrollPageView = XCRScrollPageView(frame: frame, titleStyle: XCRPageTitleStyle(), titles: titleArray, childVCs:childVCArray , parentViewController: self);
+                var style = XCRTitleScrollViewStyle()
+                style.sideInset = 10
+                style.selectedColor = UIColor.c1DA1F2
+                style.normalColor = UIColor.cB5B8BB
+                style.hideSeparateLine = false
+                scrollPageView = XCRScrollPageView(frame: frame, titleStyle:style, titles: titleArray, childVCs:childVCArray , parentViewController: self);
                 cell?.contentView.addSubview(scrollPageView)
             }
             return cell!

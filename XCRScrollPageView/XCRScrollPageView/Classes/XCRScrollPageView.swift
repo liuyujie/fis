@@ -11,7 +11,7 @@ import XCRTitleScrollView
 
 public class XCRScrollPageView: UIView {
     
-    private var titleStyle = XCRPageTitleStyle()
+    private var titleStyle : XCRTitleScrollViewStyle!
     public var parentViewController : UIViewController?
     private var titleView: XCRTitleScrollView!
     private(set) var pageContentView: XCRPageContentView!
@@ -21,7 +21,7 @@ public class XCRScrollPageView: UIView {
         return pageContentView.currentIndex
     }
     
-    public init(frame:CGRect, titleStyle: XCRPageTitleStyle, titles: [String], childVCs:[UIViewController], parentViewController: UIViewController) {
+    public init(frame:CGRect, titleStyle: XCRTitleScrollViewStyle, titles: [String], childVCs:[UIViewController], parentViewController: UIViewController) {
         self.parentViewController = parentViewController
         self.childVCArray = childVCs
         self.titleArray = titles
@@ -39,13 +39,15 @@ public class XCRScrollPageView: UIView {
         
         backgroundColor = UIColor.white
         
-        var style = XCRTitleScrollViewStyle()
-        style.sideInset = 10
-        titleView = XCRTitleScrollView(style: style)
+  
+        
+        titleView = XCRTitleScrollView(style: titleStyle)
         titleView.alwaysBounceHorizontal = true
         titleView.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: 44)
         titleView.titles = titleArray
-        titleView.backgroundColor = UIColor.orange
+        titleView.backgroundColor = UIColor.cFFFFFF
+        titleView.updateTheme()
+        
         guard let parentVc = parentViewController else { return }
         pageContentView = XCRPageContentView(frame: CGRect(x: 0, y: titleView.frame.maxY, width: bounds.size.width, height: bounds.size.height - 44), childVCArray: childVCArray, parentViewController: parentVc)
         pageContentView.delegate = self
@@ -53,9 +55,9 @@ public class XCRScrollPageView: UIView {
         addSubview(pageContentView)
         
         titleView.reloadTitles()
-
+        
         titleView.handleSelectButton = { [unowned self](selectedIndex, _) in
-            self.pageContentView.scrollTo(selectedIndex,animated: true)
+            self.pageContentView.scrollTo(selectedIndex,animated: false)
         }
 
     }

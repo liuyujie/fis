@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -257,14 +257,14 @@
 		36051D57866A65150726D2FEB3AB7D2C /* NSAttributedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSAttributedString.swift; path = XCRCore/Classes/NSAttributedString.swift; sourceTree = "<group>"; };
 		3926CC90CA40778DC927F3F2770CC13C /* XCRTitleTileView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XCRTitleTileView.swift; path = XCRTitleScrollView/Classes/XCRTitleTileView.swift; sourceTree = "<group>"; };
 		3971C6D90695B4E141D56A3922CCF1A8 /* NSBundle+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+MJRefresh.h"; path = "MJRefresh/NSBundle+MJRefresh.h"; sourceTree = "<group>"; };
-		3979EB5AA0813A82F8D12A3CF0253938 /* libXCRCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libXCRCore.a; path = libXCRCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3979EB5AA0813A82F8D12A3CF0253938 /* libXCRCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXCRCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FBBDF9734FAFE9BBC2784431906299 /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = XCRTheme/Classes/UIColor.swift; sourceTree = "<group>"; };
 		3AEF20C23CFA1A786084A2CD7D2D49CA /* MJRefreshBackNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackNormalFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h; sourceTree = "<group>"; };
 		3EC69932CCC34E509BDF44E9899EDAE6 /* MJRefreshBackStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackStateFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.m; sourceTree = "<group>"; };
 		3F200C9BC89E9402CFB1DE453355B2B3 /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateHeader.h; path = MJRefresh/Custom/Header/MJRefreshStateHeader.h; sourceTree = "<group>"; };
 		40165BA26A844BC2DC0AFC339DE18423 /* UIScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIScrollView.swift; path = XCRCore/Classes/UIScrollView.swift; sourceTree = "<group>"; };
 		41399A5F200D93F61291F1FA72CB3D07 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
-		426D60A524E1704A05C724A8497D0434 /* libPods-XCRScrollPageView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-XCRScrollPageView.a"; path = "libPods-XCRScrollPageView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		426D60A524E1704A05C724A8497D0434 /* libPods-XCRScrollPageView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XCRScrollPageView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4383FFD6E8B7BE67CCE69E969CE1F371 /* XCRKeychain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCRKeychain.h; path = XCRCore/Classes/XCRKeychain/XCRKeychain.h; sourceTree = "<group>"; };
 		458D2AE0A73D6E9FC0B510F68B8375D7 /* Pods-XCRScrollPageView-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XCRScrollPageView-acknowledgements.plist"; sourceTree = "<group>"; };
 		4671A9817E5B97F5AE2B4A85F30B114E /* Pods-XCRScrollPageView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XCRScrollPageView.modulemap"; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 		5ECF651698961E449D8258253DA04512 /* MJRefresh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MJRefresh.xcconfig; sourceTree = "<group>"; };
 		618B756CF4B5690CB59E1964BBBDC5DD /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		637D7EFFDBC2EC60C1AF61DE8D934CF0 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
-		63D6D452DD35A27E13A55BAE09549552 /* libXCRTheme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libXCRTheme.a; path = libXCRTheme.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		63D6D452DD35A27E13A55BAE09549552 /* libXCRTheme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXCRTheme.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		655EB1109EE1822B6A3F5EE6140F3562 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		671F6B0F2B01650982A11EA8B59BE44A /* placeholder.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = placeholder.png; path = XCRTheme/Assets/placeholder.png; sourceTree = "<group>"; };
@@ -320,7 +320,7 @@
 		8A79F30009E10526B2B8BEC7F0702967 /* Pods-XCRScrollPageView-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XCRScrollPageView-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8A8B914C7F510B4AB3AC52E549B23244 /* MJRefreshBackGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackGifFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h; sourceTree = "<group>"; };
 		8AED50D6823BAA9B986BB6FEC377CF7B /* MJRefreshBackFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackFooter.m; path = MJRefresh/Base/MJRefreshBackFooter.m; sourceTree = "<group>"; };
-		8C752DD97D8BEEE3EF6DC980F605EE4C /* libSnapKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSnapKit.a; path = libSnapKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C752DD97D8BEEE3EF6DC980F605EE4C /* libSnapKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSnapKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05D8C3832BE928B7EE16EDC94821FE /* MJRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-prefix.pch"; sourceTree = "<group>"; };
 		8D571E9A7A73642AE941356E1EFCBA35 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		8D67F1E2344C23C08942913AC212BD92 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
@@ -330,9 +330,9 @@
 		912688BCEC2C1DC6878351B4058262AA /* XCRTitleViewStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XCRTitleViewStyle.swift; path = XCRTitleScrollView/Classes/XCRTitleViewStyle.swift; sourceTree = "<group>"; };
 		925FE757D6CDDBA336C0C34A4198EC13 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJExtension.h"; path = "MJRefresh/UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
 		927119C37A3628350E490557F49AEDBB /* Pods-XCRScrollPageView-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-XCRScrollPageView-frameworks.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95DEE1B7893A40D4C468A3EE4163AA38 /* XCRTheme-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XCRTheme-prefix.pch"; sourceTree = "<group>"; };
-		96020665D3E30FD522EE34FD98A62B86 /* libXCRTitleScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libXCRTitleScrollView.a; path = libXCRTitleScrollView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		96020665D3E30FD522EE34FD98A62B86 /* libXCRTitleScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXCRTitleScrollView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E9BD60E5BDB0901A7555E3F77202B5 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackFooter.h; path = MJRefresh/Base/MJRefreshBackFooter.h; sourceTree = "<group>"; };
 		9940D55F85E97B38CD5218628F94C583 /* Character.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Character.swift; path = XCRCore/Classes/Character.swift; sourceTree = "<group>"; };
 		99A56064018A18FFA4C717FF66E2C11C /* ResourceBundle-XCRTheme-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-XCRTheme-Info.plist"; sourceTree = "<group>"; };
@@ -352,7 +352,7 @@
 		BB01140EC97ADD4B8064D4F9F71047BE /* MJRefreshBackGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackGifFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m; sourceTree = "<group>"; };
 		BB53245B03EAED72120A3EF912D6FD39 /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = String.swift; path = XCRCore/Classes/String.swift; sourceTree = "<group>"; };
 		BF4524D220BB52BE47FCB5140CDF17C1 /* FileManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileManager.swift; path = XCRCore/Classes/FileManager.swift; sourceTree = "<group>"; };
-		C14AEBC6B9DE3C2327EED9BC8D2DA537 /* XCRTheme.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = XCRTheme.bundle; path = "XCRTheme-XCRTheme.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14AEBC6B9DE3C2327EED9BC8D2DA537 /* XCRTheme.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XCRTheme.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2AEBFC2160861C91C45A36008031141 /* MJRefreshConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshConst.h; path = MJRefresh/MJRefreshConst.h; sourceTree = "<group>"; };
 		C5AECAFC05E65F6BCA1D135451B6802E /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		C66C42C8328082DF12235215D033AC10 /* Timer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = XCRCore/Classes/Timer.swift; sourceTree = "<group>"; };
@@ -364,7 +364,7 @@
 		D062B1229C8084BFDB5DE3C3DD1302F3 /* MJRefreshNormalHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshNormalHeader.h; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.h; sourceTree = "<group>"; };
 		D399427D9E189329A53BC185E1BA8A9E /* XCRIDFV.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCRIDFV.h; path = XCRCore/Classes/XCRIDFV.h; sourceTree = "<group>"; };
 		D39F24CF82149F07A1CE281588B19D4A /* CGFloat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGFloat.swift; path = XCRCore/Classes/CGFloat.swift; sourceTree = "<group>"; };
-		D7693EA311B8D6CF84BA05007D4A38FB /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMJRefresh.a; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7693EA311B8D6CF84BA05007D4A38FB /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AE75538A68210BF2BEF1F92CBA7242 /* default_icon_image.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = default_icon_image.png; path = XCRTheme/Assets/default_icon_image.png; sourceTree = "<group>"; };
 		DDEF1BF2D3527E957F1A7B0FE010B718 /* Pods-XCRScrollPageView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XCRScrollPageView-dummy.m"; sourceTree = "<group>"; };
 		DE36E66CCEDDCDB8D879AED3075F90EE /* UITextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITextField.swift; path = XCRCore/Classes/UITextField.swift; sourceTree = "<group>"; };
@@ -526,7 +526,6 @@
 				912688BCEC2C1DC6878351B4058262AA /* XCRTitleViewStyle.swift */,
 				A0476A9D681ED697DD34A38AAAEE2540 /* Support Files */,
 			);
-			name = XCRTitleScrollView;
 			path = XCRTitleScrollView;
 			sourceTree = "<group>";
 		};
@@ -608,7 +607,6 @@
 				316B02E5C933546F61061D3369AD064D /* Resources */,
 				7571C24E1691C468F9BE736B1330CDBB /* Support Files */,
 			);
-			name = XCRTheme;
 			path = XCRTheme;
 			sourceTree = "<group>";
 		};
@@ -619,7 +617,6 @@
 				C27365259E555D70E834850A52C029AC /* Support Files */,
 				38770515949354C8CDC9C202D42E5136 /* XCRKeychain */,
 			);
-			name = XCRCore;
 			path = XCRCore;
 			sourceTree = "<group>";
 		};
@@ -681,7 +678,6 @@
 				291CB387A236952D9DCDC0F0866509EE /* Resources */,
 				BF4AC88763791846210D84BC7050AF59 /* Support Files */,
 			);
-			name = MJRefresh;
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
@@ -768,7 +764,6 @@
 				5593D4113192BE7BC4439632348241B3 /* UILayoutSupport+Extensions.swift */,
 				E677AEAC3EFB486B41AE3406BE6E5E9D /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1020,7 +1015,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1078,7 +1073,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/XCRTitleScrollView/XCRTitleScrollView.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/XCRTitleScrollView/XCRTitleScrollView-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-			showEnvVarsInLog = 1;
 		};
 		B09006C7C33669FA65FDB0A70D699AB2 /* Copy generated compatibility header */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1099,7 +1093,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/XCRTheme/XCRTheme.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/XCRTheme/XCRTheme-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-			showEnvVarsInLog = 1;
 		};
 		B2B4DDE92FD5CCD2D42B0EA015A14152 /* Copy generated compatibility header */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1120,7 +1113,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SnapKit/SnapKit.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SnapKit/SnapKit-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-			showEnvVarsInLog = 1;
 		};
 		C92D914F28E1A7CD3BB027195C3E5B51 /* Copy generated compatibility header */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1141,7 +1133,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/XCRCore/XCRCore.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/XCRCore/XCRCore-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-			showEnvVarsInLog = 1;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1587,7 +1578,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1705,7 +1696,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1817,6 +1808,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;

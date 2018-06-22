@@ -16,7 +16,7 @@ class BViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64), style: .plain)
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64 - 44), style: .plain)
         tableView.scrollsToTop = false
         tableView.delegate = self
         tableView.dataSource = self
@@ -64,24 +64,24 @@ extension BViewController : UITableViewDataSource ,UITableViewDelegate {
 
 extension BViewController : UIScrollViewDelegate {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let y = scrollView.contentOffset.y
-        
-        if y < 0 && self.vcCanRefsh {
-            return
-        }
-    
-        if !self.vcCanScroll {
-            scrollView.contentOffset = CGPoint.zero
-        }
-        
-        if y <= 0 {
-            self.vcCanScroll = false
-            scrollView.contentOffset = CGPoint.zero
-        }
-    
-        scrollView.showsVerticalScrollIndicator = self.vcCanScroll
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        
+//        let y = scrollView.contentOffset.y
+//        
+//        if y < 0 && self.vcCanRefsh {
+//            return
+//        }
+//    
+//        if !self.vcCanScroll {
+//            scrollView.contentOffset = CGPoint.zero
+//        }
+//        
+//        if y <= 0 {
+//            self.vcCanScroll = false
+//            scrollView.contentOffset = CGPoint.zero
+//        }
+//    
+//        scrollView.showsVerticalScrollIndicator = self.vcCanScroll
+//    }
 }
 

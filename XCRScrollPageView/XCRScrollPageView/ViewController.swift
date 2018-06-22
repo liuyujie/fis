@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let frame = CGRect(x: 0, y: 64, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64)
         tableView = XCRTableView(frame: frame, style: .plain)
+        tableView.isDirectionalLockEnabled = true
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
@@ -108,6 +109,9 @@ extension ViewController : UIScrollViewDelegate {
             self.viewCanScroll = true
         }
         scrollView.showsVerticalScrollIndicator = false
+        
+        
+        print(vc.vcCanScroll,self.viewCanScroll)
     }
     
 }

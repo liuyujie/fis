@@ -1,0 +1,6 @@
+module XCRTitleScrollView {
+  umbrella header "XCRTitleScrollView-umbrella.h"
+
+  export *
+  module * { export * }
+}

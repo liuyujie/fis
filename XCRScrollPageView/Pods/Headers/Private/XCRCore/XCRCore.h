@@ -1,0 +1,1 @@
+../../../XCRCore/XCRCore/Classes/XCRCore.h

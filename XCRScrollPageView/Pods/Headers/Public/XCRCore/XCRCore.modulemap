@@ -1,0 +1,6 @@
+module XCRCore {
+  umbrella header "XCRCore-umbrella.h"
+
+  export *
+  module * { export * }
+}

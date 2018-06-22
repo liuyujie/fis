@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import XCRTitleScrollView
 
 
 public protocol XCRPageContentViewDelegate: class {
@@ -24,7 +25,7 @@ public protocol XCRPageContentViewDelegate: class {
     
     func contentViewDidEndDrag(scrollView: UIScrollView)
     /// 必须提供的属性
-    var titleContentView: XCRPageTitleView { get }
+    var titleContentView: XCRTitleScrollView { get }
 }
 
 // 由于每个遵守这个协议的都需要执行些相同的操作, 所以直接使用协议扩展统一完成,协议遵守者只需要提供segmentView即可
@@ -39,7 +40,7 @@ extension XCRPageContentViewDelegate {
     }
 
     public func contentViewIsScrolling(scrollView: UIScrollView) {
-        
+         titleContentView.scrollTitleButton(scrollView.contentOffset.x)
     }
     // 默认什么都不做
     public func contentViewDidBeginMove(scrollView: UIScrollView) {
@@ -52,13 +53,12 @@ extension XCRPageContentViewDelegate {
     
     // 内容每次滚动完成时调用, 确定title和其他的控件的位置
     public func contentViewDidEndMoveToIndex(fromIndex: Int , toIndex: Int) {
-        titleContentView.adjustTitleOffSetToCurrentIndex(currentIndex: toIndex)
-        titleContentView.adjustUIWithProgress(progress: 1.0, oldIndex: fromIndex, currentIndex: toIndex)
+//        titleContentView.scrollTitleButton(CGFloat(toIndex) * UIScreen.main.bounds.width)
     }
     
     // 内容正在滚动的时候,同步滚动滑块的控件
     public func contentViewMoveToIndex(fromIndex: Int, toIndex: Int, progress: CGFloat) {
-        titleContentView.adjustUIWithProgress(progress: progress, oldIndex: fromIndex, currentIndex: toIndex)
+        titleContentView.scrollTitleButton(progress)
     }
 }
 
@@ -190,7 +190,7 @@ extension XCRPageContentView: UIScrollViewDelegate {
     
     // update UI
     final public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let currentIndex = Int(floor(scrollView.contentOffset.x / bounds.size.width))
+        let currentIndex = Int(floor(scrollView.contentOffset.x + 1 / bounds.size.width))
         
         delegate?.contentViewDidEndDisPlay(scrollView: collectionView)
         delegate?.contentViewDidEndMoveToIndex(fromIndex: self.currentIndex, toIndex: currentIndex)
@@ -222,45 +222,15 @@ extension XCRPageContentView: UIScrollViewDelegate {
     final public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         /// 用来判断方向
         self.beginOffSetX = scrollView.contentOffset.x
-        
         delegate?.contentViewDidBeginMove(scrollView: collectionView)
-        
         self.forbidTouchToAdjustPosition = false
     }
 
     // 需要实时更新滚动的进度和移动的方向及下标 以便于外部使用 (compute the index and progress)
     final public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offSetX = scrollView.contentOffset.x
-        // 如果是点击了title, 就不要计算了, 直接在点击相应的方法里就已经处理了滚动
-        if forbidTouchToAdjustPosition {
-            return
-        }
-        
-        let temp = offSetX / bounds.size.width
-        // 滚动的进度 -- 取小数位
-        var progress = temp - floor(temp)
-        // 根据滚动的方向
-        if offSetX - beginOffSetX >= 0 {// 手指左滑, 滑块右移
-            oldIndex = Int(floor(offSetX / bounds.size.width))
-            currentIndex = oldIndex + 1
-            if currentIndex >= childVCArray.count {
-                currentIndex = oldIndex - 1
-            }
-            
-            if offSetX - beginOffSetX == scrollView.bounds.size.width {// 滚动完成
-                progress = 1.0;
-                currentIndex = oldIndex;
-            }
-            
-        } else {// 手指右滑, 滑块左移
-            currentIndex = Int(floor(offSetX / bounds.size.width))
-            oldIndex = currentIndex + 1
-            progress = 1.0 - progress
-        }
-        
-        //        print("\(progress)------\(oldIndex)----\(currentIndex)")
-        
-        delegate?.contentViewMoveToIndex(fromIndex: oldIndex, toIndex: currentIndex, progress: progress)
+        self.currentIndex = Int(floor(offSetX / bounds.size.width))
+        delegate?.contentViewIsScrolling(scrollView: scrollView)
 
     }
 

@@ -21,6 +21,7 @@
 		27AF7B6720D2791200773662 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7B6620D2791200773662 /* BViewController.swift */; };
 		27C496CA20D2B733000BFE12 /* XCRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C496C920D2B733000BFE12 /* XCRTableView.swift */; };
 		27C496CC20D2BAC1000BFE12 /* XCRBottomPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C496CB20D2BAC1000BFE12 /* XCRBottomPageCell.swift */; };
+		4B4ED5FD9BD2973BA1928522 /* libPods-XCRScrollPageView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74112D1960DEA3AFD8422300 /* libPods-XCRScrollPageView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06EE2F12DC7DEE62244408D7 /* Pods-XCRScrollPageView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XCRScrollPageView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XCRScrollPageView/Pods-XCRScrollPageView.debug.xcconfig"; sourceTree = "<group>"; };
 		27AF7B2C20D2521800773662 /* XCRScrollPageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCRScrollPageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AF7B2F20D2521800773662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27AF7B3120D2521800773662 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,8 @@
 		27AF7B6620D2791200773662 /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		27C496C920D2B733000BFE12 /* XCRTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRTableView.swift; sourceTree = "<group>"; };
 		27C496CB20D2BAC1000BFE12 /* XCRBottomPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRBottomPageCell.swift; sourceTree = "<group>"; };
+		74112D1960DEA3AFD8422300 /* libPods-XCRScrollPageView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XCRScrollPageView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78756910215D1B81F0CF8EEB /* Pods-XCRScrollPageView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XCRScrollPageView.release.xcconfig"; path = "Pods/Target Support Files/Pods-XCRScrollPageView/Pods-XCRScrollPageView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4ED5FD9BD2973BA1928522 /* libPods-XCRScrollPageView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +100,8 @@
 				27AF7B4320D2521C00773662 /* XCRScrollPageViewTests */,
 				27AF7B4E20D2521C00773662 /* XCRScrollPageViewUITests */,
 				27AF7B2D20D2521800773662 /* Products */,
+				7FD2E6BFBC9148E9AD92858E /* Pods */,
+				72472A942BAA4287ED44AF36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +161,23 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		72472A942BAA4287ED44AF36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74112D1960DEA3AFD8422300 /* libPods-XCRScrollPageView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7FD2E6BFBC9148E9AD92858E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06EE2F12DC7DEE62244408D7 /* Pods-XCRScrollPageView.debug.xcconfig */,
+				78756910215D1B81F0CF8EEB /* Pods-XCRScrollPageView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27AF7B5420D2521C00773662 /* Build configuration list for PBXNativeTarget "XCRScrollPageView" */;
 			buildPhases = (
+				F73CB22DF3AF4DB14724ED33 /* [CP] Check Pods Manifest.lock */,
 				27AF7B2820D2521800773662 /* Sources */,
 				27AF7B2920D2521800773662 /* Frameworks */,
 				27AF7B2A20D2521800773662 /* Resources */,
+				ADDBD646C10A89E34A1AFBF9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,6 +305,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ADDBD646C10A89E34A1AFBF9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XCRScrollPageView/Pods-XCRScrollPageView-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/XCRTheme/XCRTheme.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/XCRTheme.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XCRScrollPageView/Pods-XCRScrollPageView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F73CB22DF3AF4DB14724ED33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XCRScrollPageView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27AF7B2820D2521800773662 /* Sources */ = {
@@ -464,15 +531,13 @@
 		};
 		27AF7B5520D2521C00773662 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06EE2F12DC7DEE62244408D7 /* Pods-XCRScrollPageView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3MK2KJ67U7;
 				INFOPLIST_FILE = XCRScrollPageView/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xcar.app.XCRScrollPageView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -482,15 +547,13 @@
 		};
 		27AF7B5620D2521C00773662 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78756910215D1B81F0CF8EEB /* Pods-XCRScrollPageView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3MK2KJ67U7;
 				INFOPLIST_FILE = XCRScrollPageView/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xcar.app.XCRScrollPageView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -506,11 +569,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3MK2KJ67U7;
 				INFOPLIST_FILE = XCRScrollPageViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xcar.app.XCRScrollPageViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -527,11 +586,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3MK2KJ67U7;
 				INFOPLIST_FILE = XCRScrollPageViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xcar.app.XCRScrollPageViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -547,11 +602,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3MK2KJ67U7;
 				INFOPLIST_FILE = XCRScrollPageViewUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xcar.app.XCRScrollPageViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -567,11 +618,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3MK2KJ67U7;
 				INFOPLIST_FILE = XCRScrollPageViewUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xcar.app.XCRScrollPageViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

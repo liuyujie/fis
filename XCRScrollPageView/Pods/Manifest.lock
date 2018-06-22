@@ -1,0 +1,38 @@
+PODS:
+  - MJRefresh (3.1.15)
+  - SnapKit (4.0.0)
+  - XCRCore (0.2.2):
+    - XCRCore/core (= 0.2.2)
+    - XCRCore/XCRKeychain (= 0.2.2)
+  - XCRCore/core (0.2.2):
+    - XCRCore/XCRKeychain
+  - XCRCore/XCRKeychain (0.2.2)
+  - XCRTheme (0.3.0)
+  - XCRTitleScrollView (0.1.8):
+    - SnapKit
+    - XCRCore
+    - XCRTheme
+
+DEPENDENCIES:
+  - MJRefresh (= 3.1.15)
+  - XCRTitleScrollView
+
+SPEC REPOS:
+  http://gitlab.xcar.com.cn/iOS/XCRSpecs.git:
+    - XCRCore
+    - XCRTheme
+    - XCRTitleScrollView
+  https://github.com/cocoapods/specs.git:
+    - MJRefresh
+    - SnapKit
+
+SPEC CHECKSUMS:
+  MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  XCRCore: ec86548d3ca4246f59f84e30ae6098a1be864e7b
+  XCRTheme: eb3503b01b076a948604b9bde56a20c8d8da5932
+  XCRTitleScrollView: c42e1d6ad443b3d37d1956684f742585630f8631
+
+PODFILE CHECKSUM: e714fbf6eb268fff8c12916b2d41e7aa342110d8
+
+COCOAPODS: 1.5.3

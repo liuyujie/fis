@@ -1,0 +1,6 @@
+module XCRTheme {
+  umbrella header "XCRTheme-umbrella.h"
+
+  export *
+  module * { export * }
+}

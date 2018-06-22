@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import XCRTitleScrollView
 
 public class XCRScrollPageView: UIView {
     
     private var titleStyle = XCRPageTitleStyle()
     public var parentViewController : UIViewController?
-    private var titleView: XCRPageTitleView!
+    private var titleView: XCRTitleScrollView!
     private(set) var pageContentView: XCRPageContentView!
     var childVCArray: [UIViewController] = []
     var titleArray: [String] = []
@@ -37,22 +38,24 @@ public class XCRScrollPageView: UIView {
     private func commonInit(){
         
         backgroundColor = UIColor.white
-        titleView = XCRPageTitleView(frame: CGRect(x: 0, y: 0, width: bounds.size.width, height: 44), titleStyle: titleStyle, titles: titleArray)
         
+        var style = XCRTitleScrollViewStyle()
+        style.sideInset = 10
+        titleView = XCRTitleScrollView(style: style)
+        titleView.alwaysBounceHorizontal = true
+        titleView.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: 44)
+        titleView.titles = titleArray
+        titleView.backgroundColor = UIColor.orange
         guard let parentVc = parentViewController else { return }
-        
         pageContentView = XCRPageContentView(frame: CGRect(x: 0, y: titleView.frame.maxY, width: bounds.size.width, height: bounds.size.height - 44), childVCArray: childVCArray, parentViewController: parentVc)
         pageContentView.delegate = self
-
         addSubview(titleView)
         addSubview(pageContentView)
         
-        // 避免循环引用
-        titleView.titleBtnOnClick = {[unowned self] (label: UILabel, index: Int) in
-            // 切换内容显示(update content)
-//            self.pageContentView.setContentOffSet(CGPoint(x: self.contentView.bounds.size.width * CGFloat(index), y: 0), animated: self.segmentStyle.changeContentAnimated)
-            
-            self.pageContentView.scrollTo(index,animated: self.titleStyle.changeContentAnimated)
+        titleView.reloadTitles()
+
+        titleView.handleSelectButton = { [unowned self](selectedIndex, _) in
+            self.pageContentView.scrollTo(selectedIndex,animated: true)
         }
 
     }
@@ -61,7 +64,7 @@ public class XCRScrollPageView: UIView {
 }
 
 extension XCRScrollPageView: XCRPageContentViewDelegate {
-    public var titleContentView: XCRPageTitleView {
+    public var titleContentView: XCRTitleScrollView {
         return self.titleView
     }
 

@@ -35,13 +35,17 @@ class ViewController: UIViewController {
 
 extension ViewController : UITableViewDataSource ,UITableViewDelegate {
     
+    public func numberOfSections(in tableView: UITableView) -> Int {
+           return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             var cell = tableView.dequeueReusableCell(withIdentifier: "CELL_1")
             if cell == nil {
@@ -71,7 +75,7 @@ extension ViewController : UITableViewDataSource ,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             return 230
         default:

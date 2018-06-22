@@ -9,14 +9,10 @@
 import UIKit
 import XCRTitleScrollView
 
-
 public protocol XCRPageContentViewDelegate: UIScrollViewDelegate {
-    
     /// 必须提供的属性
     var titleContentView: XCRTitleScrollView { get }
 }
-
-
 
 class XCRPageContentView: UIView {
     static let cellId = "XCRPageContentCellId"
@@ -142,7 +138,7 @@ extension XCRPageContentView : UICollectionViewDataSource , UICollectionViewDele
 // MARK: - UIScrollViewDelegate
 extension XCRPageContentView: UIScrollViewDelegate {
     
-    final public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offSetX = scrollView.contentOffset.x
         self.currentIndex = Int(floor(offSetX / bounds.size.width))
         delegate?.scrollViewDidScroll?(scrollView)
@@ -155,29 +151,4 @@ extension XCRPageContentView: UIScrollViewDelegate {
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         delegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
     }
-    
-//    final public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        let currentIndex = Int(floor(scrollView.contentOffset.x / bounds.size.width))
-//        if let naviParentViewController = self.parentViewController?.parent as? UINavigationController {
-//            naviParentViewController.interactivePopGestureRecognizer?.isEnabled = true
-//        }
-//        delegate?.contentViewDidEndDrag(scrollView: scrollView)
-////        print(scrollView.contentOffset.x)
-//        //快速滚动的时候第一页和最后一页(scroll too fast will not call 'scrollViewDidEndDecelerating')
-//        if scrollView.contentOffset.x == 0 || scrollView.contentOffset.x == scrollView.contentSize.width - scrollView.bounds.width {
-//            if self.currentIndex != currentIndex {
-//                delegate?.contentViewDidEndMoveToIndex(fromIndex: self.currentIndex, toIndex: currentIndex)
-//            }
-//        }
-//    }
-//
-//    // 手指开始拖的时候, 记录此时的offSetX, 并且表示不是点击title切换的内容(remenber the begin offsetX)
-//    final public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-//        /// 用来判断方向
-//        self.beginOffSetX = scrollView.contentOffset.x
-//        self.forbidTouchToAdjustPosition = false
-//    }
-
-
-
 }

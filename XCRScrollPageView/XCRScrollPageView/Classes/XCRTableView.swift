@@ -11,12 +11,7 @@ import UIKit
 class XCRTableView: UITableView , UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        
-//
-//        print(gestureRecognizer.view)
-//
-//        print(otherGestureRecognizer.view)
-        return true
+        return gestureRecognizer.isKind(of: UIPanGestureRecognizer.self) && otherGestureRecognizer.isKind(of: UIPanGestureRecognizer.self)
     }
     
 }

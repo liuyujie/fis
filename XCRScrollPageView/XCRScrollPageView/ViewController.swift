@@ -36,7 +36,7 @@ class ViewController: UIViewController {
 extension ViewController : UITableViewDataSource ,UITableViewDelegate {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
-           return 2
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,7 +93,6 @@ extension ViewController : UIScrollViewDelegate {
         
         let vc = self.scrollPageView.childVCArray[self.scrollPageView.selectIndex] as! BViewController
 
-        
         if y >= 230 {
             self.tableView.contentOffset = CGPoint(x: 0, y: 230)
             if (self.viewCanScroll) {
@@ -112,7 +111,7 @@ extension ViewController : UIScrollViewDelegate {
         scrollView.showsVerticalScrollIndicator = false
         
         
-        print(vc.vcCanScroll,self.viewCanScroll)
+//        print(vc.vcCanScroll,self.viewCanScroll)
     }
     
 }

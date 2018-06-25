@@ -42,6 +42,7 @@ class XCRPageContentView: UIView {
         self.childVCArray = childVCArray
         super.init(frame: frame)
         commonInit()
+        addChildVCToContentVC()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -81,7 +82,18 @@ class XCRPageContentView: UIView {
         collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: UICollectionViewScrollPosition(), animated: animated)
     }
     
-    // 给外界刷新视图的方法(public method to reset childVcs)
+   
+    private func addChildVCToContentVC() {
+        // 不要添加navigationController包装后的子控制器
+        for childVC in childVCArray {
+            if childVC.isKind(of:UINavigationController.self) {
+                fatalError("不要添加UINavigationController包装后的子控制器")
+            }
+            parentViewController?.addChildViewController(childVC)
+        }
+    }
+   
+     // 给外界刷新视图的方法(public method to reset childVcs)
     public func reloadAll(newChildArray: [UIViewController] ) {
         
         childVCArray.forEach { (childVC) in
@@ -92,14 +104,7 @@ class XCRPageContentView: UIView {
         
         childVCArray.removeAll()
         childVCArray = newChildArray
-        
-        // 不要添加navigationController包装后的子控制器
-        for childVC in childVCArray {
-            if childVC.isKind(of:UINavigationController.self) {
-                fatalError("不要添加UINavigationController包装后的子控制器")
-            }
-            parentViewController?.addChildViewController(childVC)
-        }
+        addChildVCToContentVC()
         collectionView.reloadData()
     }
     

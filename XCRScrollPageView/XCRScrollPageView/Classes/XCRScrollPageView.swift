@@ -14,8 +14,6 @@ public protocol XCRScrollPageViewDelegate : NSObjectProtocol {
     func scrollPageViewWillBeginDragging(_ scrollView: UIScrollView)
     
     func scrollPageViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
-    
-
 }
 
 public class XCRScrollPageView: UIView {

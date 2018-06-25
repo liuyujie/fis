@@ -12,6 +12,8 @@ import XCRTitleScrollView
 public protocol XCRPageContentViewDelegate: UIScrollViewDelegate {
     /// 必须提供的属性
     var titleContentView: XCRTitleScrollView { get }
+    
+    func pageScrollDidSelected(_ index : Int)
 }
 
 class XCRPageContentView: UIView {
@@ -121,17 +123,26 @@ extension XCRPageContentView : UICollectionViewDataSource , UICollectionViewDele
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: XCRPageContentView.cellId, for: indexPath)
-        
         for subview in cell.contentView.subviews {
             subview.removeFromSuperview()
         }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let vc = childVCArray[indexPath.row]
         vc.view.frame = bounds
         cell.contentView.addSubview(vc.view)
         vc.didMove(toParentViewController: parentViewController)
         postShowIndexNotification(index: indexPath.row)
-        return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let offSetX = collectionView.contentOffset.x
+        self.currentIndex = Int(floor(offSetX / bounds.size.width))
+        delegate?.pageScrollDidSelected(self.currentIndex)
+    }
+    
 }
 
 
@@ -139,8 +150,6 @@ extension XCRPageContentView : UICollectionViewDataSource , UICollectionViewDele
 extension XCRPageContentView: UIScrollViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offSetX = scrollView.contentOffset.x
-        self.currentIndex = Int(floor(offSetX / bounds.size.width))
         delegate?.scrollViewDidScroll?(scrollView)
     }
 

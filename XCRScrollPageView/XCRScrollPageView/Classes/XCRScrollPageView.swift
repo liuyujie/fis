@@ -14,6 +14,8 @@ public protocol XCRScrollPageViewDelegate : NSObjectProtocol {
     func scrollPageViewWillBeginDragging(_ scrollView: UIScrollView)
     
     func scrollPageViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
+    
+
 }
 
 public class XCRScrollPageView: UIView {
@@ -26,9 +28,7 @@ public class XCRScrollPageView: UIView {
     private(set) var pageContentView: XCRPageContentView!
     var childVCArray: [UIViewController] = []
     var titleArray: [String] = []
-    var selectIndex : Int {
-        return pageContentView.currentIndex
-    }
+    var selectIndex : Int = 0
     
     public init(frame:CGRect, titleStyle: XCRTitleScrollViewStyle, titles: [String], childVCs:[UIViewController], parentViewController: UIViewController) {
         self.parentViewController = parentViewController
@@ -85,6 +85,11 @@ extension XCRScrollPageView: XCRPageContentViewDelegate {
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         self.pageDelegate?.scrollPageViewDidEndDragging(scrollView, willDecelerate: decelerate)
+    }
+    
+    public func pageScrollDidSelected(_ index: Int) {
+        selectIndex = index
+        titleContentView.selectedTitle(at: selectIndex, animated: false)
     }
 }
 

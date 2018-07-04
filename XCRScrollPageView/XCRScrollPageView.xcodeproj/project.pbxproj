@@ -19,6 +19,7 @@
 		27AF7B6720D2791200773662 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7B6620D2791200773662 /* BViewController.swift */; };
 		27C496CA20D2B733000BFE12 /* XCRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C496C920D2B733000BFE12 /* XCRTableView.swift */; };
 		27C496CC20D2BAC1000BFE12 /* XCRBottomPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C496CB20D2BAC1000BFE12 /* XCRBottomPageCell.swift */; };
+		27E93B2520E366DE00F09CA7 /* BTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E93B2420E366DE00F09CA7 /* BTView.swift */; };
 		4B4ED5FD9BD2973BA1928522 /* libPods-XCRScrollPageView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74112D1960DEA3AFD8422300 /* libPods-XCRScrollPageView.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		06EE2F12DC7DEE62244408D7 /* Pods-XCRScrollPageView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XCRScrollPageView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XCRScrollPageView/Pods-XCRScrollPageView.debug.xcconfig"; sourceTree = "<group>"; };
+		27431B7220EC58C900E86BEC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		27431B7320EC58C900E86BEC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		27AF7B2C20D2521800773662 /* XCRScrollPageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCRScrollPageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AF7B2F20D2521800773662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27AF7B3120D2521800773662 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 		27AF7B6620D2791200773662 /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		27C496C920D2B733000BFE12 /* XCRTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRTableView.swift; sourceTree = "<group>"; };
 		27C496CB20D2BAC1000BFE12 /* XCRBottomPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRBottomPageCell.swift; sourceTree = "<group>"; };
+		27E93B2420E366DE00F09CA7 /* BTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTView.swift; sourceTree = "<group>"; };
 		74112D1960DEA3AFD8422300 /* libPods-XCRScrollPageView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XCRScrollPageView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78756910215D1B81F0CF8EEB /* Pods-XCRScrollPageView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XCRScrollPageView.release.xcconfig"; path = "Pods/Target Support Files/Pods-XCRScrollPageView/Pods-XCRScrollPageView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +123,7 @@
 				27AF7B3120D2521800773662 /* ViewController.swift */,
 				27C496CB20D2BAC1000BFE12 /* XCRBottomPageCell.swift */,
 				27AF7B6620D2791200773662 /* BViewController.swift */,
+				27E93B2420E366DE00F09CA7 /* BTView.swift */,
 				27AF7B3320D2521800773662 /* Main.storyboard */,
 				27AF7B3620D2521B00773662 /* Assets.xcassets */,
 				27AF7B3820D2521B00773662 /* LaunchScreen.storyboard */,
@@ -346,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E93B2520E366DE00F09CA7 /* BTView.swift in Sources */,
 				27AF7B6720D2791200773662 /* BViewController.swift in Sources */,
 				27AF7B3220D2521800773662 /* ViewController.swift in Sources */,
 				27AF7B5F20D2561A00773662 /* XCRScrollPageView.swift in Sources */,
@@ -392,6 +398,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				27AF7B3420D2521800773662 /* Base */,
+				27431B7220EC58C900E86BEC /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -400,6 +407,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				27AF7B3920D2521B00773662 /* Base */,
+				27431B7320EC58C900E86BEC /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -411,6 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -458,7 +467,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -471,6 +480,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -512,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -529,6 +539,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3MK2KJ67U7;
 				INFOPLIST_FILE = XCRScrollPageView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,6 +559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3MK2KJ67U7;
 				INFOPLIST_FILE = XCRScrollPageView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -66,6 +66,7 @@ extension ViewController : UITableViewDataSource ,UITableViewDelegate {
                 style.selectedColor = UIColor.c1DA1F2
                 style.normalColor = UIColor.cB5B8BB
                 style.hideSeparateLine = false
+                style.hideTitleUnderLine = true
                 scrollPageView = XCRScrollPageView(frame: frame, titleStyle:style, titles: titleArray, childVCs:childVCArray , parentViewController: self);
                 scrollPageView.pageDelegate = self
                 cell?.contentView.addSubview(scrollPageView)

@@ -23,6 +23,8 @@ public struct XCRTitleScrollViewStyle {
     public var itemScale: CGFloat = 1.1
     /// 是否隐藏分隔线
     public var hideSeparateLine: Bool = true
+    /// 是否隐藏标题下的标记线
+    public var hideTitleUnderLine: Bool = false
     /// 左右两侧的inset
     public var sideInset: CGFloat = 5.0
     /// 标题按钮之间的间距

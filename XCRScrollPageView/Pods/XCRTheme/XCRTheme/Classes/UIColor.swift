@@ -32,7 +32,7 @@ extension UIColor {
     public static let cEFF2F5: UIColor = UIColor(red: 0.94, green: 0.95, blue: 0.96, alpha: 1.00)
     /// 工具栏背景
     public static let cF4F7F9: UIColor = UIColor(red: 0.96, green: 0.97, blue: 0.98, alpha: 1.00)
-    /// 图注背景
+    /// 主要文字
     public static let c44494D: UIColor = UIColor(red: 0.27, green: 0.29, blue: 0.30, alpha: 1.00)
     /// 辅助文字
     public static let cB5B8BB: UIColor = UIColor(red: 0.71, green: 0.72, blue: 0.73, alpha: 1.00)

@@ -46,6 +46,7 @@ public class XCRTitleScrollView: UIScrollView {
         addSubview(separateLine)
 
         underLine = UIView()
+        underLine.isHidden = style.hideTitleUnderLine
         underLine.layer.cornerRadius = kCornerRadius
         underLine.layer.masksToBounds = true
         underLine.backgroundColor = style.selectedColor

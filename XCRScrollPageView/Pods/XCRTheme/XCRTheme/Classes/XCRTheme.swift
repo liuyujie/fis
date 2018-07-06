@@ -31,7 +31,7 @@ public struct XCRTheme {
     /// Default user icon
     public static var defaultIconImage: UIImage? {
         if let bundle = themeBundle {
-            return UIImage(named: "placeholder", in: bundle, compatibleWith: nil)
+            return UIImage(named: "default_icon_image", in: bundle, compatibleWith: nil)
         }
         return nil
     }

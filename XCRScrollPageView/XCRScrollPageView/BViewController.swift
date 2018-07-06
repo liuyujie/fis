@@ -23,6 +23,9 @@ class BViewController: UIViewController {
         
         view.addSubview(tableView)
         
+        
+        let btView = BTView(frame: CGRect.zero)
+        view.addSubview(btView)
 
         // Do any additional setup after loading the view.
     }
@@ -31,6 +34,9 @@ class BViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+
     
 }
 

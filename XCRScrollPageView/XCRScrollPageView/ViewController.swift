@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         
     var viewCanScroll : Bool = true
     
-    var tableView: UITableView!
+    var tableView: XCRTableView!
     
     var scrollPageView: XCRScrollPageView!
     
@@ -25,6 +25,15 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
+        
+        let manager = XCRPanGestureManager()
+        manager.headerHeight = 230
+        tableView.panGestureManager = manager
+
+        tableView.shouldHandelBlock = {(selfGesture: UIGestureRecognizer, otherGestur: UIGestureRecognizer) -> Bool in
+            return selfGesture.isKind(of: UIPanGestureRecognizer.self) && otherGestur.isKind(of: UIPanGestureRecognizer.self)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,8 +68,18 @@ extension ViewController : UITableViewDataSource ,UITableViewDelegate {
             if cell == nil {
                 cell = UITableViewCell(style: .default, reuseIdentifier: "CELL_Page_View")
                 let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64)
-                let titleArray = ["abc","dbcc","db2cc","dbc3c","dbc2c","dbc2"]
-                let childVCArray = [BViewController(),BViewController(),BViewController(),BViewController(),BViewController(),BViewController()]
+                let titleArray = ["abc","dbcc","db2cc"]
+                
+                let a = BViewController()
+                a.panGestureManager = self.tableView.panGestureManager
+                
+                let c = BViewController()
+                c.panGestureManager = self.tableView.panGestureManager
+                
+                let b = BViewController()
+                b.panGestureManager = self.tableView.panGestureManager
+        
+                let childVCArray = [a,b,c]
                 var style = XCRTitleScrollViewStyle()
                 style.sideInset = 10
                 style.selectedColor = UIColor.c1DA1F2
@@ -89,37 +108,15 @@ extension ViewController : UITableViewDataSource ,UITableViewDelegate {
 extension ViewController : UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let y = scrollView.contentOffset.y
-        
-        let vc = self.scrollPageView.childVCArray[self.scrollPageView.selectIndex] as! BViewController
-
-        if y >= 230 {
-            self.tableView.contentOffset = CGPoint(x: 0, y: 230)
-            if (self.viewCanScroll) {
-                self.viewCanScroll = false;
-                vc.vcCanScroll = true;
-            }
-        } else {
-            if !self.viewCanScroll {//子视图没到顶部
-                self.tableView.contentOffset = CGPoint(x: 0, y: 230)
-            }
+        if let manager = tableView.panGestureManager {
+            manager.handleRootVCOffsetChanged(scrollView)
         }
-        
-        if !vc.vcCanScroll && !self.viewCanScroll {
-            self.viewCanScroll = true
-        }
-        scrollView.showsVerticalScrollIndicator = false
-        
-        
-//        print(vc.vcCanScroll,self.viewCanScroll)
     }
     
 }
 
 extension ViewController : XCRScrollPageViewDelegate {
     
-
     func scrollPageViewWillBeginDragging(_ scrollView: UIScrollView){
         tableView.isScrollEnabled = false
     }

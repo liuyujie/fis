@@ -8,9 +8,11 @@
 
 import UIKit
 
-class BViewController: UIViewController {
+class BViewController: UIViewController, XCRPanGestureHandelable {
 
-    var vcCanScroll : Bool = false
+    // MARK: - XCRPanGestureHandelable
+    var panGestureManager: XCRPanGestureManager?
+    var previousOffset: CGPoint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,21 +25,21 @@ class BViewController: UIViewController {
         
         view.addSubview(tableView)
         
-        
         let btView = BTView(frame: CGRect.zero)
         view.addSubview(btView)
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
+}
 
+extension BViewController : UIScrollViewDelegate {
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        handleShowVCOffsetChanged(scrollView)
+    }
 }
 
 extension BViewController : UITableViewDataSource ,UITableViewDelegate {
@@ -61,25 +63,6 @@ extension BViewController : UITableViewDataSource ,UITableViewDelegate {
             self.presentVC(vc)
         }
     }
-    
 }
 
-extension BViewController : UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let y = scrollView.contentOffset.y
-        
-        if !self.vcCanScroll {
-            scrollView.contentOffset = CGPoint.zero
-        }
-        
-        if y <= 0 {
-            self.vcCanScroll = false
-            scrollView.contentOffset = CGPoint.zero
-        }
-    
-        scrollView.showsVerticalScrollIndicator = self.vcCanScroll
-    }
-}
 

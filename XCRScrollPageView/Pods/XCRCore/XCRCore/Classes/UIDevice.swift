@@ -199,7 +199,7 @@ extension UIDevice {
                 identifier.append(String(UnicodeScalar(UInt8(value))))
             }
         }
-        
+
         return identifier
     }
 }

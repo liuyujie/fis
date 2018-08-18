@@ -9,11 +9,11 @@
 import UIKit
 
 class XCRBottomPageCell: UITableViewCell {
-    
-    var scrolPageView : XCRScrollPageView?
-    var cellCanScroll : Bool = false
-    var isRefresh : Bool = false
-    var selectedTitle : String?
+
+    var scrolPageView: XCRScrollPageView?
+    var cellCanScroll: Bool = false
+    var isRefresh: Bool = false
+    var selectedTitle: String?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +25,5 @@ class XCRBottomPageCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    
 
 }

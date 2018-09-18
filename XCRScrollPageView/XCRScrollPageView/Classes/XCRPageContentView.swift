@@ -78,7 +78,7 @@ class XCRPageContentView: UIView {
     }
 
     public func scrollTo(_ index: Int, animated: Bool) {
-        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: UICollectionViewScrollPosition(), animated: animated)
+        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: UICollectionView.ScrollPosition(), animated: animated)
     }
 
     private func addChildVCToContentVC() {
@@ -87,7 +87,7 @@ class XCRPageContentView: UIView {
             if childVC.isKind(of: UINavigationController.self) {
                 fatalError("不要添加UINavigationController包装后的子控制器")
             }
-            parentViewController?.addChildViewController(childVC)
+            parentViewController?.addChild(childVC)
         }
     }
 
@@ -95,9 +95,9 @@ class XCRPageContentView: UIView {
     public func reloadAll(newChildArray: [UIViewController] ) {
 
         childVCArray.forEach { (childVC) in
-            childVC.willMove(toParentViewController: nil)
+            childVC.willMove(toParent: nil)
             childVC.view.removeFromSuperview()
-            childVC.removeFromParentViewController()
+            childVC.removeFromParent()
         }
 
         childVCArray.removeAll()
@@ -135,7 +135,7 @@ extension XCRPageContentView: UICollectionViewDataSource, UICollectionViewDelega
         let vc = childVCArray[indexPath.row]
         vc.view.frame = bounds
         cell.contentView.addSubview(vc.view)
-        vc.didMove(toParentViewController: parentViewController)
+        vc.didMove(toParent: parentViewController)
         postShowIndexNotification(index: indexPath.row)
     }
 

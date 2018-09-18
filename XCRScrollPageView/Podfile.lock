@@ -7,8 +7,8 @@ PODS:
   - XCRCore/core (0.2.2):
     - XCRCore/XCRKeychain
   - XCRCore/XCRKeychain (0.2.2)
-  - XCRTheme (0.3.1)
-  - XCRTitleScrollView (0.1.9):
+  - XCRTheme (0.3.3)
+  - XCRTitleScrollView (0.2.0):
     - SnapKit
     - XCRCore
     - XCRTheme
@@ -30,8 +30,8 @@ SPEC CHECKSUMS:
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   XCRCore: ec86548d3ca4246f59f84e30ae6098a1be864e7b
-  XCRTheme: 783c1fd29f5f357a7f643789ce7b04e8687966b2
-  XCRTitleScrollView: a3b92b7cd4c093e783dc6b355b36610e00523d04
+  XCRTheme: 79f02ea3ef3492300267144d7290fb8ed5e3e688
+  XCRTitleScrollView: a033d84018f73b07038b59ce224c5a7e3b7b9e72
 
 PODFILE CHECKSUM: e714fbf6eb268fff8c12916b2d41e7aa342110d8
 

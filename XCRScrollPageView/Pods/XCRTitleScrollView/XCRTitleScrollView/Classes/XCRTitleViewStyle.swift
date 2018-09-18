@@ -37,7 +37,7 @@ public struct XCRTitleScrollViewStyle {
 
 public struct XCRTitleViewStyle {
     /// 未选中标题颜色
-    public var normalColor: UIColor = UIColor.c44494D
+    public var normalColor: UIColor = UIColor.c181818
     /// 选中标题颜色
     public var selectedColor: UIColor = UIColor.cFFFFFF
     /// 未选中标题背景色

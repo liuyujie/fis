@@ -51,7 +51,7 @@ class XCRTitleTileCell: UICollectionViewCell {
     // MARK: - Theme
     @objc internal func updateTheme() {
         backgroundColor = hasSelected ? UIColor.c1DA1F2 : UIColor.cF4F6F9
-        titleLabel.textColor = hasSelected ? UIColor.cFFFFFF : UIColor.c44494D
+        titleLabel.textColor = hasSelected ? UIColor.cFFFFFF : UIColor.c181818
     }
 
     deinit {
